@@ -1,1 +1,1 @@
-# portfolio-gallery-react
+# portfolio-ecommerce
