@@ -677,3 +677,164 @@ body {
     padding: 30px 20px;
   }
 }
+
+/* MOBILE NAV - Hamburger Menu */
+.mobile-nav {
+  display: none;
+  position: relative;
+}
+
+.burger-btn {
+  background: transparent;
+  border: none;
+  color: #1e40af;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-btn:hover {
+  color: #1e3a8a;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  margin-top: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-link {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-link:hover {
+  background: #f9f9f9;
+  color: #1e40af;
+}
+
+/* MEDIA QUERIES - Show/Hide nav */
+@media (max-width: 960px) {
+  .header-nav {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header.scrolled .mobile-nav {
+    right: 10px;
+  }
+
+  .app {
+    padding-top: 100px;
+  }
+
+  .header {
+    padding: 40px 15px;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .header-content p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding-top: 80px;
+  }
+
+  .header {
+    padding: 30px 10px;
+  }
+
+  .header-content h1 {
+    font-size: 1.4em;
+  }
+
+  .header-content p {
+    font-size: 0.8em;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-header h1,
+  .shop-header h1 {
+    font-size: 1.6em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Évite zoom au focus iOS */
+  }
+}
+
+@media (min-width: 960px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}

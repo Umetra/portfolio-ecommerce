@@ -1,5 +1,6 @@
 import { useHeaderScroll } from '../hooks/useHeaderScroll';
 import { useNavigate, useLocation } from 'react-router-dom';
+import MobileNav from './MobileNav';
 
 export default function Header() {
   const isScrolled = useHeaderScroll();
@@ -13,6 +14,7 @@ export default function Header() {
         <p>Transformez votre maison en maison intelligente</p>
       </div>
       
+      {/* Desktop Nav */}
       <nav className="header-nav">
         {location.pathname !== '/' && (
           <button className="nav-btn" onClick={() => navigate('/')}>
@@ -25,11 +27,14 @@ export default function Header() {
             Boutique
           </button>
         )}
-
         
-        
-        <button className="nav-btn" onClick={() => navigate('/about')}>À propos</button>
+        <button className="nav-btn" onClick={() => navigate('/about')}>
+          À propos
+        </button>
       </nav>
+
+      {/* Mobile Nav */}
+      <MobileNav />
     </header>
   );
 }
